@@ -1,5 +1,6 @@
 .friendMessage {
     max-width: 50%;
+    width: max-content;
 }
 
 .friendImageAndText {
