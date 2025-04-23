@@ -1,4 +1,7 @@
 .radio {
+    width: 20px;
+    height: 20px;
+    accent-color: #000000;
 }
 
 .radio::before {
@@ -8,8 +11,20 @@
 .radio:checked::before {
 }
 
+.span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 .label {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
 }

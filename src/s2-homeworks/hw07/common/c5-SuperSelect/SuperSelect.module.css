@@ -1,9 +1,23 @@
 .select {
+    padding: 5px;
+    min-width: 165px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .select:focus {
 }
 
+.option {
+    padding: 5px;
+    min-width: 165px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
 
 .option:hover {
 }
