@@ -23,6 +23,7 @@
 }
 
 .more {
+    min-height: 55px;
     span {
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
