@@ -1,8 +1,32 @@
 .container {
+
 }
 
 .wrapper {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    padding-left: 36px;
+    padding-right: 45px;
+}
+
+.wrapper > .number:first-of-type {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.wrapper > .number:last-of-type {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
 }
 
 .number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
 }
