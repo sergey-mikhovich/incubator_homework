@@ -37,10 +37,26 @@ const HW13 = () => {
                 setCode('Код 200!')
                 setImage(success200)
                 // дописать
-
+                setText(res.data.errorText)
+                setInfo(res.data.info)
             })
             .catch((e) => {
                 // дописать
+                if (axios.isAxiosError(e)) {
+                    if (e.response?.data) {
+                        const data = e.response.data as { errorText: string, info: string }
+
+                        setCode(`Ошибка ${e.response.status}`)
+                        setImage(e.response.status === 400 ? error400 : error500)
+                        setText(data.errorText)
+                        setInfo(data.info)
+                    } else {
+                        setCode("Error!")
+                        setImage(errorUnknown)
+                        setText(e.message)
+                        setInfo(e.name)
+                    }
+                }
 
             })
     }
@@ -56,7 +72,7 @@ const HW13 = () => {
                         onClick={send(true)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info === '...loading'}
                     >
                         Send true
                     </SuperButton>
@@ -65,7 +81,7 @@ const HW13 = () => {
                         onClick={send(false)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info === '...loading'}
                     >
                         Send false
                     </SuperButton>
@@ -74,7 +90,7 @@ const HW13 = () => {
                         onClick={send(undefined)}
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info === '...loading'}
                     >
                         Send undefined
                     </SuperButton>
@@ -83,7 +99,7 @@ const HW13 = () => {
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
                         // дописать
-
+                        disabled={info === '...loading'}
                     >
                         Send null
                     </SuperButton>
